@@ -1,2 +1,9 @@
-package lk.ijse.dep11;public class AboutUsController {
+package lk.ijse.dep11;
+
+import javafx.scene.control.TextArea;
+
+public class AboutUsController {
+    public TextArea txtArea;
+
+
 }
