@@ -31,7 +31,7 @@ public class MainFormController {
         stage.centerOnScreen();
         stage.show();
 
-        FadeTransition fade = new FadeTransition(Duration.millis(1750), mainRoot);
+        FadeTransition fade = new FadeTransition(Duration.millis(750), mainRoot);
         fade.setFromValue(0);
         fade.setToValue(1);
         fade.playFromStart();
@@ -42,7 +42,17 @@ public class MainFormController {
 
     }
 
-    public void userGuideOnAction(ActionEvent actionEvent) {
+    public void userGuideOnAction(ActionEvent actionEvent) throws Exception {
+        AnchorPane userGuideRoot = FXMLLoader.load(getClass().getResource("/view/UserGuide.fxml"));
+        Scene scene = new Scene(userGuideRoot);
+
+        Stage stage = new Stage();
+        stage.initModality(Modality.WINDOW_MODAL);
+        stage.initOwner(root.getScene().getWindow());
+
+        stage.setScene(scene);
+        stage.setTitle("User Guide");
+        stage.show();
     }
 
     public void aboutUsOnAction(ActionEvent actionEvent) throws Exception{
