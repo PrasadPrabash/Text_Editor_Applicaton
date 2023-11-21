@@ -4,7 +4,10 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Background;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 public class AppInitializer extends Application {
 
@@ -14,12 +17,18 @@ public class AppInitializer extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        AnchorPane root = FXMLLoader.load(getClass().getResource("/view/MainForm.fxml"));
-        Scene mainScene = new Scene(root);
-        primaryStage.setScene(mainScene);
-        primaryStage.setTitle("White Board Text Editor");
+
+        AnchorPane splashRoot = FXMLLoader.load(getClass().getResource("/view/SplashScreen.fxml"));
+        Scene splashScene = new Scene(splashRoot);
+        primaryStage.setScene(splashScene);
+      //  primaryStage.setTitle("Undecorated Window");
+        primaryStage.initStyle(StageStyle.TRANSPARENT);
+        splashRoot.setBackground(Background.fill(Color.TRANSPARENT));
+        splashScene.setFill(Color.TRANSPARENT);
         primaryStage.centerOnScreen();
         primaryStage.show();
 
     }
+
+
 }

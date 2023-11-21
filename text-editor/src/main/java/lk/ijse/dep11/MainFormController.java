@@ -19,6 +19,10 @@ public class MainFormController {
     public MenuItem userGuide;
     public MenuItem aboutUs;
 
+    public void initialize(){
+
+    }
+
     public void newFileOnAction(ActionEvent actionEvent) throws Exception{
         AnchorPane mainRoot = FXMLLoader.load(getClass().getResource("/view/MainForm.fxml"));
         Scene mainScene = new Scene(mainRoot);
